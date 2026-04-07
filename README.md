@@ -1,6 +1,6 @@
 # distilleR <img src="man/figures/logo.png" height="140" align="right"/>
 
-[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable) [![codecov](https://codecov.io/gh/openefsa/distilleR/branch/main/graph/badge.svg?token=BF95QQPCA1)](https://codecov.io/gh/openefsa/distilleR)
 
 ## Overview
 
