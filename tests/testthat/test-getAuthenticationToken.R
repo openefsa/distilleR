@@ -8,14 +8,14 @@ test_that("The url must be a string", {
 test_that("The API key must be a string", {
   expect_error(
     getAuthenticationToken(
-      distillerInstanceUrl = "",
+      distillerInstanceUrl = "https://example.org",
       distillerKey = 123))
 })
 
 test_that("The timeout must be an integer", {
   expect_error(
     getAuthenticationToken(
-      distillerInstanceUrl = "",
+      distillerInstanceUrl = "https://example.org",
       distillerKey = "DISTILLER_API_KEY",
       timeout = ""))
 })

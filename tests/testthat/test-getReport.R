@@ -3,12 +3,13 @@ test_that("The project ID must be an integer", {
     getReport(
       projectId = 123,
       reportId = 456,
-      format = "",
-      distillerInstanceUrl = "",
+      format = "csv",
+      distillerInstanceUrl = "https://example.org",
       distillerToken = "DISTILLER_TOKEN",
       timeout = 1800,
-      attempts = 3,
-      retryEach = 3600))
+      attempts = 1,
+      retryEach = 3600,
+      verbose = FALSE))
 })
 
 test_that("The project ID must be an integer", {
@@ -16,12 +17,13 @@ test_that("The project ID must be an integer", {
     getReport(
       projectId = "",
       reportId = 456,
-      format = "",
-      distillerInstanceUrl = "",
+      format = "csv",
+      distillerInstanceUrl = "https://example.org",
       distillerToken = "DISTILLER_TOKEN",
       timeout = 1800,
-      attempts = 3,
-      retryEach = 3600))
+      attempts = 1,
+      retryEach = 3600,
+      verbose = FALSE))
 })
 
 test_that("The report ID must be an integer", {
@@ -29,12 +31,13 @@ test_that("The report ID must be an integer", {
     getReport(
       projectId = 123,
       reportId = "",
-      format = "",
-      distillerInstanceUrl = "",
+      format = "csv",
+      distillerInstanceUrl = "https://example.org",
       distillerToken = "DISTILLER_TOKEN",
       timeout = 1800,
-      attempts = 3,
-      retryEach = 3600))
+      attempts = 1,
+      retryEach = 3600,
+      verbose = FALSE))
 })
 
 test_that("The format must be a string", {
@@ -43,11 +46,12 @@ test_that("The format must be a string", {
       projectId = 123,
       reportId = 456,
       format = 1,
-      distillerInstanceUrl = "",
+      distillerInstanceUrl = "https://example.org",
       distillerToken = "DISTILLER_TOKEN",
       timeout = 1800,
-      attempts = 3,
-      retryEach = 3600))
+      attempts = 1,
+      retryEach = 3600,
+      verbose = FALSE))
 })
 
 test_that("The format must be allowed", {
@@ -56,11 +60,12 @@ test_that("The format must be allowed", {
       projectId = 123,
       reportId = 456,
       format = "json",
-      distillerInstanceUrl = "",
+      distillerInstanceUrl = "https://example.org",
       distillerToken = "DISTILLER_TOKEN",
       timeout = 1800,
-      attempts = 3,
-      retryEach = 3600))
+      attempts = 1,
+      retryEach = 3600,
+      verbose = FALSE))
 })
 
 test_that("The url must be a string", {
@@ -68,12 +73,13 @@ test_that("The url must be a string", {
     getReport(
       projectId = 123,
       reportId = 456,
-      format = "",
+      format = "csv",
       distillerInstanceUrl = 1,
       distillerToken = "DISTILLER_TOKEN",
       timeout = 1800,
-      attempts = 3,
-      retryEach = 3600))
+      attempts = 1,
+      retryEach = 3600,
+      verbose = FALSE))
 })
 
 test_that("The token must be a string", {
@@ -81,12 +87,13 @@ test_that("The token must be a string", {
     getReport(
       projectId = 123,
       reportId = 456,
-      format = "",
-      distillerInstanceUrl = "",
+      format = "csv",
+      distillerInstanceUrl = "https://example.org",
       distillerToken = 1,
       timeout = 1800,
-      attempts = 3,
-      retryEach = 3600))
+      attempts = 1,
+      retryEach = 3600,
+      verbose = FALSE))
 })
 
 test_that("The timeout must be an integer", {
@@ -94,12 +101,13 @@ test_that("The timeout must be an integer", {
     getReport(
       projectId = 123,
       reportId = 456,
-      format = "",
-      distillerInstanceUrl = "",
+      format = "csv",
+      distillerInstanceUrl = "https://example.org",
       distillerToken = "DISTILLER_TOKEN",
       timeout = "",
-      attempts = 3,
-      retryEach = 3600))
+      attempts = 1,
+      retryEach = 3600,
+      verbose = FALSE))
 })
 
 test_that("The number of attempts must be an integer", {
@@ -107,12 +115,13 @@ test_that("The number of attempts must be an integer", {
     getReport(
       projectId = 123,
       reportId = 456,
-      format = "",
-      distillerInstanceUrl = "",
+      format = "csv",
+      distillerInstanceUrl = "https://example.org",
       distillerToken = "DISTILLER_TOKEN",
       timeout = 1800,
       attempts = "",
-      retryEach = 3600))
+      retryEach = 3600,
+      verbose = FALSE))
 })
 
 test_that("The retry delay must be an integer", {
@@ -120,12 +129,13 @@ test_that("The retry delay must be an integer", {
     getReport(
       projectId = 123,
       reportId = 456,
-      format = "",
-      distillerInstanceUrl = "",
+      format = "csv",
+      distillerInstanceUrl = "https://example.org",
       distillerToken = "DISTILLER_TOKEN",
       timeout = 1800,
-      attempts = 3,
-      retryEach = ""))
+      attempts = 1,
+      retryEach = "",
+      verbose = FALSE))
 })
 
 test_that("The verbose flag must be a logical", {
@@ -133,11 +143,11 @@ test_that("The verbose flag must be a logical", {
     getReport(
       projectId = 123,
       reportId = 456,
-      format = "",
-      distillerInstanceUrl = "",
+      format = "csv",
+      distillerInstanceUrl = "https://example.org",
       distillerToken = "DISTILLER_TOKEN",
       timeout = 1800,
-      attempts = 3,
+      attempts = 1,
       retryEach = 3600,
       verbose = 123))
 })
@@ -147,12 +157,13 @@ test_that("The attempts must be at least one", {
     getReport(
       projectId = 123,
       reportId = 456,
-      format = "",
-      distillerInstanceUrl = "",
+      format = "csv",
+      distillerInstanceUrl = "https://example.org",
       distillerToken = "DISTILLER_TOKEN",
       timeout = 1800,
       attempts = 0,
-      retryEach = 3600))
+      retryEach = 3600,
+      verbose = FALSE))
 })
 
 test_that("The retry delay must be at least the timeout value", {
@@ -160,12 +171,13 @@ test_that("The retry delay must be at least the timeout value", {
     getReport(
       projectId = 123,
       reportId = 456,
-      format = "",
-      distillerInstanceUrl = "",
+      format = "csv",
+      distillerInstanceUrl = "https://example.org",
       distillerToken = "DISTILLER_TOKEN",
       timeout = 1800,
-      attempts = 3,
-      retryEach = 1700))
+      attempts = 1,
+      retryEach = 1700,
+      verbose = FALSE))
 })
 
 test_that("Expect an error if a bad instance URL is specified", {
@@ -181,7 +193,8 @@ test_that("Expect an error if a bad instance URL is specified", {
           format = "excel",
           distillerInstanceUrl = "https://invalid_instance",
           distillerToken = "DISTILLER_TOKEN",
-          retryEach = 1))
+          retryEach = 1,
+          verbose = FALSE))
     }
   )
 })
@@ -204,7 +217,9 @@ test_that("Expect an error if a bad instance URL is specified", {
       reportId = as.integer(distillerReportId_),
       format = "excel",
       distillerInstanceUrl = distillerInstanceUrl_,
-      distillerToken = "DISTILLER_TOKEN"))
+      distillerToken = "DISTILLER_TOKEN",
+      attempts = 1,
+      verbose = FALSE))
 })
 
 test_that("Expect an error if a bad token is specified", {
@@ -219,7 +234,9 @@ test_that("Expect an error if a bad token is specified", {
           reportId = 456,
           format = "excel",
           distillerInstanceUrl = "https://example.org",
-          distillerToken = "BAD_TOKEN"))
+          distillerToken = "BAD_TOKEN",
+          attempts = 1,
+          verbose = FALSE))
     }
   )
 })
@@ -238,7 +255,9 @@ test_that("Expect an error if a bad token is specified", {
       projectId = as.integer(distillerProjectId_),
       reportId = as.integer(distillerReportId_),
       format = "excel",
-      distillerToken = "BAD_TOKEN"))
+      distillerToken = "BAD_TOKEN",
+      attempts = 1,
+      verbose = FALSE))
 })
 
 test_that("A tibble must be returned (XLSX)", {
@@ -269,7 +288,10 @@ test_that("A tibble must be returned (XLSX)", {
         projectId = 123,
         reportId = 456,
         format = "excel",
-        distillerToken = "DISTILLER_TOKEN")
+        distillerInstanceUrl = "https://example.org",
+        distillerToken = "DISTILLER_TOKEN",
+        attempts = 1,
+        verbose = FALSE)
       
       expect_s3_class(reports_, "data.frame")
     }
@@ -291,7 +313,9 @@ test_that("A tibble must be returned (XLSX)", {
     projectId = as.integer(distillerProjectId_),
     reportId = as.integer(distillerReportId_),
     format = "excel",
-    distillerToken = distillerToken_)
+    distillerToken = distillerToken_,
+    attempts = 1,
+    verbose = FALSE)
   
   expect_s3_class(reports_, "data.frame")
 })
@@ -315,7 +339,10 @@ test_that("A tibble must be returned (CSV)", {
         projectId = 123,
         reportId = 456,
         format = "csv",
-        distillerToken = "DISTILLER_TOKEN")
+        distillerInstanceUrl = "https://example.org",
+        distillerToken = "DISTILLER_TOKEN",
+        attempts = 1,
+        verbose = FALSE)
       
       expect_s3_class(reports_, "data.frame")
     }
@@ -335,6 +362,7 @@ test_that("The delay mechanism must work properly", {
           projectId = 123,
           reportId = 456,
           format = "csv",
+          distillerInstanceUrl = "https://example.org",
           distillerToken = "DISTILLER_TOKEN",
           attempts = 2,
           retryEach = 1,
@@ -354,6 +382,7 @@ test_that("The verbosity must work properly", {
           projectId = 123,
           reportId = 456,
           format = "csv",
+          distillerInstanceUrl = "https://example.org",
           distillerToken = "DISTILLER_TOKEN",
           attempts = 2,
           retryEach = 1))

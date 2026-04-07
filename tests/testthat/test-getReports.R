@@ -2,7 +2,7 @@ test_that("The project ID must be an integer", {
   expect_error(
     getReports(
       projectId = "",
-      distillerInstanceUrl = "",
+      distillerInstanceUrl = "https://example.org",
       distillerToken = "DISTILLER_TOKEN"))
 })
 
@@ -18,7 +18,7 @@ test_that("The token must be a string", {
   expect_error(
     getReports(
       projectId = 123,
-      distillerInstanceUrl = "",
+      distillerInstanceUrl = "https://example.org",
       distillerToken = 123))
 })
 
@@ -26,7 +26,7 @@ test_that("The timeout must be an integer", {
   expect_error(
     getReports(
       projectId = 123,
-      distillerInstanceUrl = "",
+      distillerInstanceUrl = "https://example.org",
       distillerToken = "DISTILLER_TOKEN",
       timeout = ""))
 })
@@ -72,6 +72,7 @@ test_that("Expect an error if a bad token is specified", {
       expect_error(
         getReports(
           projectId = 123,
+          distillerInstanceUrl = "https://example.org",
           distillerToken = "BAD_TOKEN"))
     }
   )
@@ -105,6 +106,7 @@ test_that("A four-column tibble must be returned", {
     }, {
       reports_ <- getReports(
         projectId = 123,
+        distillerInstanceUrl = "https://example.org",
         distillerToken = "DISTILLER_TOKEN")
       
       expect_s3_class(reports_, "data.frame")
