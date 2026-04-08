@@ -24,7 +24,7 @@ Useful links:
 Authors:
 \itemize{
   \item Lorenzo Copelli (\href{https://orcid.org/0009-0002-4305-065X}{ORCID})
-  \item Fulvio Barizzone
+  \item Fulvio Barizzone (\href{https://orcid.org/0009-0006-3035-520X}{ORCID})
   \item Dayana Stephanie Buzle (\href{https://orcid.org/0009-0003-2990-7431}{ORCID})
   \item Rafael Vieira (\href{https://orcid.org/0009-0009-0289-5438}{ORCID})
 }
