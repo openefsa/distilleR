@@ -21,7 +21,7 @@ Authors:
 
 - Lorenzo Copelli ([ORCID](https://orcid.org/0009-0002-4305-065X))
 
-- Fulvio Barizzone
+- Fulvio Barizzone ([ORCID](https://orcid.org/0009-0006-3035-520X))
 
 - Dayana Stephanie Buzle
   ([ORCID](https://orcid.org/0009-0003-2990-7431))
