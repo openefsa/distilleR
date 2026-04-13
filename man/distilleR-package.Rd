@@ -4,7 +4,7 @@
 \name{distilleR-package}
 \alias{distilleR}
 \alias{distilleR-package}
-\title{distilleR: A wrap around the DistillerSR APIs}
+\title{distilleR: A Wrap Around the DistillerSR APIs}
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
