@@ -21,12 +21,12 @@ Source:
 [`DESCRIPTION`](https://github.com/openefsa/distilleR/blob/main/DESCRIPTION)
 
 Copelli L, Barizzone F, Buzle D, Vieira R, Belmonte L (2026).
-*distilleR: A wrap around the DistillerSR APIs*.
+*distilleR: A Wrap Around the DistillerSR APIs*.
 [doi:10.32614/CRAN.package.distilleR](https://doi.org/10.32614/CRAN.package.distilleR),
 R package version 1.0.0, <https://CRAN.R-project.org/package=distilleR>.
 
     @Manual{,
-      title = {distilleR: A wrap around the DistillerSR APIs},
+      title = {distilleR: A Wrap Around the DistillerSR APIs},
       author = {Lorenzo Copelli and Fulvio Barizzone and Dayana Stephanie Buzle and Rafael Vieira and Luca Belmonte},
       year = {2026},
       note = {R package version 1.0.0},
