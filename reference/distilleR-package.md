@@ -1,4 +1,4 @@
-# distilleR: A wrap around the DistillerSR APIs
+# distilleR: A Wrap Around the DistillerSR APIs
 
 The distilleR package provides a pool of functions to query DistillerSR
 through its APIs. It features authentication and utilities to retrieve
