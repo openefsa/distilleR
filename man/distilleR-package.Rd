@@ -13,7 +13,7 @@ The distilleR package provides a pool of functions to query DistillerSR through 
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://openefsa.github.io/distilleR}
+  \item \url{https://openefsa.github.io/distilleR/}
   \item Report bugs at \url{https://github.com/openefsa/distilleR/issues}
 }
 
