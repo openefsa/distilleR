@@ -8,7 +8,7 @@ data from DistillerSR projects and reports.
 
 Useful links:
 
-- <https://openefsa.github.io/distilleR>
+- <https://openefsa.github.io/distilleR/>
 
 - Report bugs at <https://github.com/openefsa/distilleR/issues>
 
