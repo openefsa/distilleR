@@ -29,7 +29,7 @@ Description: The distilleR package provides a pool of functions to query
     DistillerSR through its APIs. It features authentication and utilities to
     retrieve data from DistillerSR projects and reports.
 License: file LICENSE
-URL: https://openefsa.github.io/distilleR
+URL: https://openefsa.github.io/distilleR/
 BugReports: https://github.com/openefsa/distilleR/issues
 Depends:
     R (>= 4.1.0)
