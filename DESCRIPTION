@@ -1,6 +1,6 @@
 Package: distilleR
 Type: Package
-Title: A Wrap Around the DistillerSR APIs
+Title: A Wrap Around the 'DistillerSR' APIs
 Version: 1.0.0
 Maintainer: Luca Belmonte <luca.belmonte@efsa.europa.eu>
 Authors@R:
@@ -25,11 +25,10 @@ Authors@R:
            role = c("aut", "cre"),
            email = "luca.belmonte@efsa.europa.eu",
            comment = c(ORCID = "0000-0002-7977-9170")))
-Description: Provides a pool of functions to query DistillerSR through its APIs.
-  It features authentication and utilities to retrieve data from DistillerSR
-  projects and reports. See
-  <[https://apidocs.evidencepartners.com/]https://apidocs.evidencepartners.com/>
-  for more details.
+Description: Provides a pool of functions to query 'DistillerSR' through its
+  APIs. It features authentication and utilities to retrieve data from
+  'DistillerSR' projects and reports. See
+  <https://apidocs.evidencepartners.com/> for more details.
 License: EUPL-1.2
 URL: https://openefsa.github.io/distilleR/
 BugReports: https://github.com/openefsa/distilleR/issues
