@@ -25,10 +25,12 @@ Authors@R:
            role = c("aut", "cre"),
            email = "luca.belmonte@efsa.europa.eu",
            comment = c(ORCID = "0000-0002-7977-9170")))
-Description: The distilleR package provides a pool of functions to query
-    DistillerSR through its APIs. It features authentication and utilities to
-    retrieve data from DistillerSR projects and reports.
-License: file LICENSE
+Description: Provides a pool of functions to query DistillerSR through its APIs.
+  It features authentication and utilities to retrieve data from DistillerSR
+  projects and reports. See
+  <[https://apidocs.evidencepartners.com/]https://apidocs.evidencepartners.com/>
+  for more details.
+License: EUPL-1.2
 URL: https://openefsa.github.io/distilleR/
 BugReports: https://github.com/openefsa/distilleR/issues
 Depends:
