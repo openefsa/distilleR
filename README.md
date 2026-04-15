@@ -38,7 +38,9 @@ Once installed, load the package as usual:
 library(distilleR)
 ```
 
-Basic usage examples and full documentation are available in the package [vignette](vignettes/distilleR.Rmd):
+Basic usage examples and full documentation are available in the package
+[guide](https://openefsa.github.io/distilleR/articles/distilleR.html) or in the
+package vignettes:
 
 ```r
 vignette("distilleR")
