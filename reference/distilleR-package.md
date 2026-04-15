@@ -1,8 +1,10 @@
 # distilleR: A Wrap Around the DistillerSR APIs
 
-The distilleR package provides a pool of functions to query DistillerSR
-through its APIs. It features authentication and utilities to retrieve
-data from DistillerSR projects and reports.
+Provides a pool of functions to query DistillerSR through its APIs. It
+features authentication and utilities to retrieve data from DistillerSR
+projects and reports. See
+\<\[https://apidocs.evidencepartners.com/\]https://apidocs.evidencepartners.com/\>
+for more details.
 
 ## See also
 

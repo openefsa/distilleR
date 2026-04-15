@@ -44,7 +44,8 @@ library(distilleR)
 ```
 
 Basic usage examples and full documentation are available in the package
-[vignette](https://openefsa.github.io/distilleR/vignettes/distilleR.Rmd):
+[guide](https://openefsa.github.io/distilleR/articles/distilleR.html) or
+in the package vignettes:
 
 ``` r
 vignette("distilleR")
