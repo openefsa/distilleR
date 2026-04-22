@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Provides a pool of functions to query 'DistillerSR' through its APIs. It features authentication and utilities to retrieve data from 'DistillerSR' projects and reports. See \url{https://apidocs.evidencepartners.com/} for more details.
+Interface to 'DistillerSR' APIs. See \url{https://apidocs.evidencepartners.com/} for more details.
 }
 \seealso{
 Useful links:

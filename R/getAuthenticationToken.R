@@ -26,7 +26,8 @@
 #'
 #' @importFrom checkmate assert_string assert_int
 #'
-#' @examplesIf FALSE
+#' @examples
+#' \dontrun{
 #' # If 'DISTILLER_INSTANCE_URL' and 'DISTILLER_API_KEY' are defined in your
 #' # environment (e.g. .Renviron).
 #' distillerToken_ <- getAuthenticationToken()
@@ -34,8 +35,8 @@
 #' # If 'distillerInstanceUrl' and 'distillerKey' are to be specified manually.
 #' distillerToken_ <- getAuthenticationToken(
 #'   distillerInstanceUrl = "https://url.to.distiller.instance",
-#'   distillerKey = "YOUR_API_KEY"
-#' )
+#'   distillerKey = "YOUR_API_KEY")
+#' }
 #' 
 #' @export
 #' 

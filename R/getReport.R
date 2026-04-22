@@ -47,9 +47,12 @@
 #' @seealso \code{\link{getProjects}}
 #' @seealso \code{\link{getReports}}
 #'
-#' @examplesIf FALSE
+#' @examples
+#' \dontrun{
 #' distillerToken_ <- getAuthenticationToken()
+#' 
 #' projects_ <- getProjects(distillerToken = distillerToken_)
+#' 
 #' reports_ <- getReports(
 #'   projectId = projects_$id[1],
 #'   distillerToken = distillerToken_)
@@ -59,6 +62,7 @@
 #'   reportID = reports_$id[7],
 #'   format = "csv",
 #'   distillerToken = distillerToken_)
+#' }
 #' 
 #' @export
 #' 

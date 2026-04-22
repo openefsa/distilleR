@@ -18,11 +18,6 @@
 #' @importFrom readxl read_excel
 #' @importFrom httr2 resp_body_raw
 #' @importFrom cli cli_abort
-#'
-#' @examplesIf FALSE
-#' response_ <- req_perform(request("https://example.org/"))
-#' 
-#' xlsxResponseData_ <- .parseXLSXResponse(response = response_)
 #' 
 #' @keywords internal
 #' @noRd

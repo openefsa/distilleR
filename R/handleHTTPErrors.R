@@ -15,11 +15,6 @@
 #' @importFrom checkmate assert_class assert_string
 #' @importFrom httr2 resp_status
 #' @importFrom cli cli_abort
-#'
-#' @examplesIf FALSE
-#' response_ <- req_perform(request("https://example.org/"))
-#' 
-#' .handleHTTPErrors(response = response_)
 #' 
 #' @keywords internal
 #' @noRd
