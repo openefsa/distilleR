@@ -52,9 +52,9 @@ A tibble with four columns:
 ## Examples
 
 ``` r
-if (FALSE) {
+if (FALSE) { # \dontrun{
 distillerToken_ <- getAuthenticationToken()
 
 projects_ <- getProjects(distillerToken = distillerToken_)
-}
+} # }
 ```

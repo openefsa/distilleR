@@ -85,7 +85,7 @@ environment variables <code>DISTILLER_API_KEY</code> and <code>DISTILLER_INSTANC
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># \dontrun{</span></span></span>
 <span class="r-in"><span><span class="co"># If 'DISTILLER_INSTANCE_URL' and 'DISTILLER_API_KEY' are defined in your</span></span></span>
 <span class="r-in"><span><span class="co"># environment (e.g. .Renviron).</span></span></span>
 <span class="r-in"><span><span class="va">distillerToken_</span> <span class="op">&lt;-</span> <span class="fu">getAuthenticationToken</span><span class="op">(</span><span class="op">)</span></span></span>
@@ -93,9 +93,9 @@ environment variables <code>DISTILLER_API_KEY</code> and <code>DISTILLER_INSTANC
 <span class="r-in"><span><span class="co"># If 'distillerInstanceUrl' and 'distillerKey' are to be specified manually.</span></span></span>
 <span class="r-in"><span><span class="va">distillerToken_</span> <span class="op">&lt;-</span> <span class="fu">getAuthenticationToken</span><span class="op">(</span></span></span>
 <span class="r-in"><span>  distillerInstanceUrl <span class="op">=</span> <span class="st">"https://url.to.distiller.instance"</span>,</span></span>
-<span class="r-in"><span>  distillerKey <span class="op">=</span> <span class="st">"YOUR_API_KEY"</span></span></span>
-<span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="op">}</span></span></span>
+<span class="r-in"><span>  distillerKey <span class="op">=</span> <span class="st">"YOUR_API_KEY"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span> <span class="co"># }</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

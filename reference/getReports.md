@@ -59,12 +59,13 @@ A tibble with four columns:
 ## Examples
 
 ``` r
-if (FALSE) {
+if (FALSE) { # \dontrun{
 distillerToken_ <- getAuthenticationToken()
+
 projects_ <- getProjects(distillerToken = distillerToken_)
 
 reports_ <- getReports(
   projectId = projects_$id[1],
   distillerToken = distillerToken_)
-}
+} # }
 ```

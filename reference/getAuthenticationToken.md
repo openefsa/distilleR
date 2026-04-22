@@ -49,7 +49,7 @@ the environment variables `DISTILLER_API_KEY` and
 ## Examples
 
 ``` r
-if (FALSE) {
+if (FALSE) { # \dontrun{
 # If 'DISTILLER_INSTANCE_URL' and 'DISTILLER_API_KEY' are defined in your
 # environment (e.g. .Renviron).
 distillerToken_ <- getAuthenticationToken()
@@ -57,7 +57,6 @@ distillerToken_ <- getAuthenticationToken()
 # If 'distillerInstanceUrl' and 'distillerKey' are to be specified manually.
 distillerToken_ <- getAuthenticationToken(
   distillerInstanceUrl = "https://url.to.distiller.instance",
-  distillerKey = "YOUR_API_KEY"
-)
-}
+  distillerKey = "YOUR_API_KEY")
+} # }
 ```

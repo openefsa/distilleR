@@ -87,9 +87,11 @@ DistillerSR.
 ## Examples
 
 ``` r
-if (FALSE) {
+if (FALSE) { # \dontrun{
 distillerToken_ <- getAuthenticationToken()
+
 projects_ <- getProjects(distillerToken = distillerToken_)
+
 reports_ <- getReports(
   projectId = projects_$id[1],
   distillerToken = distillerToken_)
@@ -99,5 +101,5 @@ report_ <- getReport(
   reportID = reports_$id[7],
   format = "csv",
   distillerToken = distillerToken_)
-}
+} # }
 ```
