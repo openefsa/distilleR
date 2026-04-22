@@ -30,15 +30,6 @@
 #' 
 #' @importFrom checkmate assert_string assert_list assert_int
 #' @importFrom httr2 request req_method req_headers req_timeout req_body_json
-#'
-#' @examplesIf FALSE
-#' serviceUrl_ <- "https://url.to.distiller.instance/projects"
-#' 
-#' distillerToken_ <- getAuthenticationToken()
-#' 
-#' serviceRequest_ <- .buildServiceRequest(
-#'   serviceUrl = serviceUrl_,
-#'   distillerToken = distillerToken_)
 #' 
 #' @keywords internal
 #' @noRd

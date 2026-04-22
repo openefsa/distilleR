@@ -26,14 +26,6 @@
 #' 
 #' @importFrom checkmate assert_string assert_int
 #' @importFrom httr2 request req_method req_headers req_timeout
-#'
-#' @examplesIf FALSE
-#' distillerInstanceUrl_ <- "https://url.to.distiller.instance"
-#' distillerKey_ <- "YOUR_API_KEY"
-#' 
-#' request_ <- .buildAuthenticationRequest(
-#'   distillerInstanceUrl = distillerInstanceUrl_,
-#'   distillerKey = distillerKey_)
 #' 
 #' @keywords internal
 #' @noRd

@@ -17,11 +17,6 @@
 #' @importFrom httr2 req_perform
 #' @importFrom cli cli_abort
 #' 
-#' @examplesIf FALSE
-#' request_ <- request("https://example.org/")
-#' 
-#' response_ <- .performRequest(request = request_)
-#' 
 #' @keywords internal
 #' @noRd
 #' 
