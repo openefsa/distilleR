@@ -39,11 +39,12 @@ and a valid API instance URL. The result is a dataframe listing available
 projects.
 }
 \examples{
-\dontshow{if (FALSE) withAutoprint(\{ # examplesIf}
+\dontrun{
 distillerToken_ <- getAuthenticationToken()
 
 projects_ <- getProjects(distillerToken = distillerToken_)
-\dontshow{\}) # examplesIf}
+}
+
 }
 \seealso{
 \code{\link{getAuthenticationToken}}

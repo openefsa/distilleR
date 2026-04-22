@@ -43,14 +43,16 @@ and a valid API endpoint URL. The result is a dataframe containing metadata
 about each saved report.
 }
 \examples{
-\dontshow{if (FALSE) withAutoprint(\{ # examplesIf}
+\dontrun{
 distillerToken_ <- getAuthenticationToken()
+
 projects_ <- getProjects(distillerToken = distillerToken_)
 
 reports_ <- getReports(
   projectId = projects_$id[1],
   distillerToken = distillerToken_)
-\dontshow{\}) # examplesIf}
+}
+
 }
 \seealso{
 \code{\link{getAuthenticationToken}}

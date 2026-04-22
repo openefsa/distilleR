@@ -34,13 +34,16 @@
 #' @seealso \code{\link{getAuthenticationToken}}
 #' @seealso \code{\link{getProjects}}
 #' 
-#' @examplesIf FALSE
+#' @examples
+#' \dontrun{
 #' distillerToken_ <- getAuthenticationToken()
+#' 
 #' projects_ <- getProjects(distillerToken = distillerToken_)
 #' 
 #' reports_ <- getReports(
 #'   projectId = projects_$id[1],
 #'   distillerToken = distillerToken_)
+#' }
 #' 
 #' @export
 #' 

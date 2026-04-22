@@ -30,10 +30,12 @@
 #'
 #' @seealso \code{\link{getAuthenticationToken}}
 #'
-#' @examplesIf FALSE
+#' @examples
+#' \dontrun{
 #' distillerToken_ <- getAuthenticationToken()
 #' 
 #' projects_ <- getProjects(distillerToken = distillerToken_)
+#' }
 #' 
 #' @export
 #' 

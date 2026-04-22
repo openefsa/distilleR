@@ -39,7 +39,7 @@ By default, the personal access key and the instance URL are read from the
 environment variables \code{DISTILLER_API_KEY} and \code{DISTILLER_INSTANCE_URL}.
 }
 \examples{
-\dontshow{if (FALSE) withAutoprint(\{ # examplesIf}
+\dontrun{
 # If 'DISTILLER_INSTANCE_URL' and 'DISTILLER_API_KEY' are defined in your
 # environment (e.g. .Renviron).
 distillerToken_ <- getAuthenticationToken()
@@ -47,7 +47,7 @@ distillerToken_ <- getAuthenticationToken()
 # If 'distillerInstanceUrl' and 'distillerKey' are to be specified manually.
 distillerToken_ <- getAuthenticationToken(
   distillerInstanceUrl = "https://url.to.distiller.instance",
-  distillerKey = "YOUR_API_KEY"
-)
-\dontshow{\}) # examplesIf}
+  distillerKey = "YOUR_API_KEY")
+}
+
 }
