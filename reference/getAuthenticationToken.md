@@ -18,20 +18,21 @@ getAuthenticationToken(
 
 - distillerInstanceUrl:
 
-  `character` (string). The base URL of the DistillerSR instance.
+  `character` (string, optional). The base URL of the DistillerSR
+  instance.
 
   By default: Sys.getenv("DISTILLER_INSTANCE_URL").
 
 - distillerKey:
 
-  `character` (string). The personal access key generated in
+  `character` (string, optional). The personal access key generated in
   DistillerSR.
 
   By default: Sys.getenv("DISTILLER_API_KEY").
 
 - timeout:
 
-  `integer`. The maximum number of seconds to wait for the
+  `integer` (optional). The maximum number of seconds to wait for the
   authentication response.
 
   By default: 1800 seconds (30 minutes).

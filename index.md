@@ -18,6 +18,7 @@ require convenient programmatic access to DistillerSR data.
 ### From CRAN
 
 ``` r
+
 install.packages("distilleR")
 ```
 
@@ -26,6 +27,7 @@ install.packages("distilleR")
 To install the latest development version:
 
 ``` r
+
 # install.packages("devtools")
 devtools::install_github("openefsa/distilleR")
 ```
@@ -40,6 +42,7 @@ with DistillerSR online services to fetch and process data.
 Once installed, load the package as usual:
 
 ``` r
+
 library(distilleR)
 ```
 
@@ -48,6 +51,7 @@ Basic usage examples and full documentation are available in the package
 in the package vignettes:
 
 ``` r
+
 vignette("distilleR")
 ```
 

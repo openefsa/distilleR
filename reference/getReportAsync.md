@@ -1,23 +1,20 @@
-# Get a Distiller report associated to a project of the authenticated user.
+# Submit an asynchronous job to retrieve a Distiller report.
 
-This function queries the DistillerSR API to retrieve a saved report
-associated with a given project ID. It requires user authentication and
-a valid API endpoint URL. The result is a dataframe containing metadata
-about the saved report.
+This function submits an asynchronous job to DistillerSR to retrieve a
+saved report associated with a given project ID. It requires user
+authentication and a valid asynchronous API endpoint URL. The result is
+a dataframe containing metadata about the submitted job.
 
 ## Usage
 
 ``` r
-getReport(
+getReportAsync(
   projectId,
   reportId,
-  format = c("excel", "csv"),
   distillerInstanceUrl = Sys.getenv("DISTILLER_INSTANCE_URL"),
+  distillerAsyncInstanceUrl = Sys.getenv("DISTILLER_ASYNC_INSTANCE_URL"),
   distillerToken,
-  timeout = 1800,
-  attempts = 1,
-  retryEach = 600,
-  verbose = TRUE
+  timeout = 1800
 )
 ```
 
@@ -31,16 +28,18 @@ getReport(
 
   `integer`. The ID of the report as provided by DistillerSR.
 
-- format:
-
-  `character` (string). The desired format for the document. It can be
-  either excel or csv.
-
 - distillerInstanceUrl:
 
-  `character` (string, optional). The distiller instance URL.
+  `character` (string, optional). The Distiller instance URL.
 
   By default: Sys.getenv("DISTILLER_INSTANCE_URL").
+
+- distillerAsyncInstanceUrl:
+
+  `character` (string, optional). The asynchronous Distiller instance
+  URL.
+
+  By default: Sys.getenv("DISTILLER_ASYNC_INSTANCE_URL").
 
 - distillerToken:
 
@@ -53,29 +52,9 @@ getReport(
 
   By default: 1800 seconds (30 minutes).
 
-- attempts:
-
-  `integer` (optional). The maximum number of attempts.
-
-  By default: 1 attempt.
-
-- retryEach:
-
-  `integer` (optional). The delay between attempts.
-
-  By default: 600 seconds (10 minutes).
-
-- verbose:
-
-  `logical` (optional). A flag to specify whether to make the function
-  verbose or not.
-
-  By default: TRUE.
-
 ## Value
 
-A data frame containing the Distiller report as designed within
-DistillerSR.
+A data frame containing metadata about the submitted job.
 
 ## See also
 
@@ -84,6 +63,10 @@ DistillerSR.
 [`getProjects`](https://openefsa.github.io/distilleR/reference/getProjects.md)
 
 [`getReports`](https://openefsa.github.io/distilleR/reference/getReports.md)
+
+[`getAsyncReportStatus`](https://openefsa.github.io/distilleR/reference/getAsyncReportStatus.md)
+
+[`getAsyncReportResult`](https://openefsa.github.io/distilleR/reference/getAsyncReportResult.md)
 
 ## Examples
 
@@ -97,7 +80,7 @@ reports_ <- getReports(
   projectId = projects_$id[1],
   distillerToken = distillerToken_)
   
-report_ <- getReport(
+job_ <- getReportAsync(
   projectId = projects_$id[1],
   reportID = reports_$id[7],
   format = "csv",

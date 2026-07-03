@@ -14,6 +14,7 @@ require convenient programmatic access to DistillerSR data.
 ### From CRAN
 
 ``` r
+
 install.packages("distilleR")
 ```
 
@@ -22,6 +23,7 @@ install.packages("distilleR")
 To install the latest development version:
 
 ``` r
+
 # install.packages("devtools")
 devtools::install_github("openefsa/distilleR")
 ```
@@ -70,6 +72,7 @@ function. This is useful if you refer not to store the API key globally.
 For example:
 
 ``` r
+
 token <- getAuthenticationToken(distillerKey = "<your_distiller_api_key>")
 ```
 
@@ -87,13 +90,15 @@ DistillerSR instance URL in the following format:
 
 `DISTILLER_INSTANCE_URL=<your_distiller_instance_url>`
 
-After saving the file, R will automatically read the API key on startup.
+After saving the file, R will automatically read the instance URL on
+startup.
 
 Alternatively, you can provide the instance URL directly in the
 `distillerInstanceUrl` argument of functions that require it. This is
 useful if you refer not to store the instance URL globally. For example:
 
 ``` r
+
 token <- getAuthenticationToken(
   distillerKey = "<your_distiller_api_key>",
   distillerInstanceUrl = "<your_distiller_instance_url>"
@@ -103,8 +108,9 @@ token <- getAuthenticationToken(
 or
 
 ``` r
+
 projects <- getProjects(
-  token = token,
+  distillerToken = distillerToken,
   distillerInstanceUrl = "<your_distiller_instance_url>"
 )
 ```
@@ -119,12 +125,14 @@ Below are examples demonstrating how to use the functions in this
 package. First, load the *distilleR* package:
 
 ``` r
+
 library(distilleR)
 ```
 
 To explore the arguments and usage of a specific function, you can run:
 
 ``` r
+
 help("<function_name>")
 ```
 
@@ -136,6 +144,7 @@ For example, if you are working with the
 function, you can check its documentation with:
 
 ``` r
+
 help("getReport")
 ```
 
@@ -148,6 +157,7 @@ To to so, use the
 function:
 
 ``` r
+
 token <- getAuthenticationToken()
 ```
 
@@ -166,6 +176,7 @@ associated with your DistillerSR account, you can browse them with the
 function, as follows:
 
 ``` r
+
 projects <- getProjects(distillerToken = token)
 
 print(projects)
@@ -179,6 +190,7 @@ retrieve the list of associated reports with the
 function, as follows:
 
 ``` r
+
 reports <- getReports(projectId = 1234, distillerToken = token)
 
 print(reports)
@@ -188,9 +200,12 @@ print(reports)
 
 You can retrieve a specific report with the
 [`getReport()`](https://openefsa.github.io/distilleR/reference/getReport.md)
-function by specifying a project ID and a report ID, as follows:
+function by specifying a project ID and a report ID, as follows. The
+`format` parameter must reflect the original report format; it can be
+either ‘excel’ or ‘csv’.
 
 ``` r
+
 projectId_ <- 1234
 reportId_ <- 567
 
@@ -206,3 +221,77 @@ print(head(report))
 Note that for very large reports, CSV files are generally a better
 choice. Exporting to Excel may cause issues when tables exceed one
 million rows, whereas CSV handles large datasets more reliably.
+
+## Getting a specific report asynchronously
+
+DistillerSR also supports an asynchronous mechanism for retrieving
+reports. This functionality is available through the **distilleR**
+package and can be accessed using the
+[`getReportAsync()`](https://openefsa.github.io/distilleR/reference/getReportAsync.md),
+[`getAsyncReportStatus()`](https://openefsa.github.io/distilleR/reference/getAsyncReportStatus.md),
+and
+[`getAsyncReportResult()`](https://openefsa.github.io/distilleR/reference/getAsyncReportResult.md)
+methods.
+
+An asynchronous report retrieval job can be initiated using the
+[`getReportAsync()`](https://openefsa.github.io/distilleR/reference/getReportAsync.md)
+function, as demonstrated in the following example:
+
+``` r
+
+projectId_ <- 1234
+reportId_ <- 567
+
+job <- getReportAsync(
+  projectId = projectId_,
+  reportId = reportId_,
+  format = "csv",
+  distillerToken = token)
+
+print(job)
+```
+
+The function initiates an asynchronous job and returns a dataframe
+containing metadata about the submitted job, including a unique job
+token that can be used to monitor its status and retrieve the results:
+
+``` r
+# A tibble: 1 × 3
+  token                                status  duplicate
+  <chr>                                <chr>   <lgl>    
+1 e515528e-ce65-44a3-88c3-29207a39e732 pending FALSE
+```
+
+To monitor the progress of a submitted report job, use the
+[`getAsyncReportStatus()`](https://openefsa.github.io/distilleR/reference/getAsyncReportStatus.md)
+function. An example is provided below:
+
+``` r
+
+jobToken <- job$token
+
+jobStatus <- getAsyncReportStatus(jobToken = jobToken)
+
+print(jobStatus)
+```
+
+The function returns a dataframe containing metadata about the status of
+the submitted job:
+
+``` r
+# A tibble: 1 × 7
+  token                                status    created_at      finished_at downstream_status error result_url
+  <chr>                                <chr>     <chr>           <chr>                   <int> <chr> <chr>     
+1 e515538e-cc65-44e3-88b3-29207a99e735 succeeded 2026-07-02T14:… 2026-07-02…               200 NA    /jobs/e51…
+```
+
+When the job status indicates successful completion, the resulting
+report can be obtained using the
+[`getAsyncReportResult()`](https://openefsa.github.io/distilleR/reference/getAsyncReportResult.md)
+function, as demonstrated below. The `format` parameter must reflect the
+original report format; it can be either ‘excel’ or ‘csv’.
+
+``` r
+
+jobResult <- getAsyncReportResult(jobToken = jobToken, format = "csv")
+```

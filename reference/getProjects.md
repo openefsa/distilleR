@@ -19,7 +19,7 @@ getProjects(
 
 - distillerInstanceUrl:
 
-  `character` (string). The distiller instance URL.
+  `character` (string, optional). The distiller instance URL.
 
   By default: Sys.getenv("DISTILLER_INSTANCE_URL").
 
@@ -29,7 +29,8 @@ getProjects(
 
 - timeout:
 
-  `integer`. The maximum number of seconds to wait for the response.
+  `integer` (optional). The maximum number of seconds to wait for the
+  response.
 
   By default: 1800 seconds (30 minutes).
 
