@@ -24,28 +24,29 @@ getReport(
 \item{format}{\code{character} (string). The desired format for the document. It
 can be either excel or csv.}
 
-\item{distillerInstanceUrl}{\code{character} (string). The distiller instance URL.
+\item{distillerInstanceUrl}{\code{character} (string, optional). The distiller
+instance URL.
 
 By default: Sys.getenv("DISTILLER_INSTANCE_URL").}
 
 \item{distillerToken}{\code{character} (string). The token the user gets once
 authenticated.}
 
-\item{timeout}{\code{integer}. The maximum number of seconds to wait for the
-response.
+\item{timeout}{\code{integer} (optional). The maximum number of seconds to wait
+for the response.
 
 By default: 1800 seconds (30 minutes).}
 
-\item{attempts}{\code{integer}. The maximum number of attempts.
+\item{attempts}{\code{integer} (optional). The maximum number of attempts.
 
 By default: 1 attempt.}
 
-\item{retryEach}{\code{integer}. The delay between attempts.
+\item{retryEach}{\code{integer} (optional). The delay between attempts.
 
 By default: 600 seconds (10 minutes).}
 
-\item{verbose}{\code{logical}. A flag to specify whether to make the function
-verbose or not.
+\item{verbose}{\code{logical} (optional). A flag to specify whether to make the
+function verbose or not.
 
 By default: TRUE.}
 }

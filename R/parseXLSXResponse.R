@@ -5,8 +5,8 @@
 #' @param response `httr2_response`. An HTTP response object returned by
 #'   `httr2::req_perform()`.
 #' 
-#' @param errorMessage `character` (string). The message to display in case of
-#'   errors.
+#' @param errorMessage `character` (string, optional). The message to display in
+#'   case of errors.
 #' 
 #' @return A dataframe containing the parsed XLSX response.
 #' 

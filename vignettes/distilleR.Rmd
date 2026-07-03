@@ -80,7 +80,7 @@ If you prefer to store the URL in the `.Renviron` file, add your DistillerSR ins
 
 `DISTILLER_INSTANCE_URL=<your_distiller_instance_url>`
 
-After saving the file, R will automatically read the API key on startup.
+After saving the file, R will automatically read the instance URL on startup.
 
 Alternatively, you can provide the instance URL directly in the `distillerInstanceUrl` argument of functions that require it. This is useful if you refer not to store the instance URL globally. For example:
 
@@ -95,7 +95,7 @@ or
 
 ```{r instanceUrlExample2, eval=FALSE}
 projects <- getProjects(
-  token = token,
+  distillerToken = distillerToken,
   distillerInstanceUrl = "<your_distiller_instance_url>"
 )
 ```
@@ -156,7 +156,7 @@ print(reports)
 
 ## Getting a specific report
 
-You can retrieve a specific report with the `getReport()` function by specifying a project ID and a report ID, as follows:
+You can retrieve a specific report with the `getReport()` function by specifying a project ID and a report ID, as follows. The `format` parameter must reflect the original report format; it can be either 'excel' or 'csv'.
 
 ```{r getReport, eval=FALSE}
 projectId_ <- 1234
@@ -172,3 +172,56 @@ print(head(report))
 ```
 
 Note that for very large reports, CSV files are generally a better choice. Exporting to Excel may cause issues when tables exceed one million rows, whereas CSV handles large datasets more reliably.
+
+## Getting a specific report asynchronously
+
+DistillerSR also supports an asynchronous mechanism for retrieving reports. This functionality is available through the **distilleR** package and can be accessed using the `getReportAsync()`, `getAsyncReportStatus()`, and `getAsyncReportResult()` methods.
+
+An asynchronous report retrieval job can be initiated using the `getReportAsync()` function, as demonstrated in the following example:
+
+```{r getReportAsync, eval=FALSE}
+projectId_ <- 1234
+reportId_ <- 567
+
+job <- getReportAsync(
+  projectId = projectId_,
+  reportId = reportId_,
+  format = "csv",
+  distillerToken = token)
+
+print(job)
+```
+
+The function initiates an asynchronous job and returns a dataframe containing metadata about the submitted job, including a unique job token that can be used to monitor its status and retrieve the results:
+
+```{r getReportAsyncOutput, eval=FALSE}
+# A tibble: 1 × 3
+  token                                status  duplicate
+  <chr>                                <chr>   <lgl>    
+1 e515528e-ce65-44a3-88c3-29207a39e732 pending FALSE
+```
+
+To monitor the progress of a submitted report job, use the `getAsyncReportStatus()` function. An example is provided below:
+
+```{r getAsyncReportStatus, eval=FALSE}
+jobToken <- job$token
+
+jobStatus <- getAsyncReportStatus(jobToken = jobToken)
+
+print(jobStatus)
+```
+
+The function returns a dataframe containing metadata about the status of the submitted job:
+
+```{r getAsyncReportStatusOutput, eval=FALSE}
+# A tibble: 1 × 7
+  token                                status    created_at      finished_at downstream_status error result_url
+  <chr>                                <chr>     <chr>           <chr>                   <int> <chr> <chr>     
+1 e515538e-cc65-44e3-88b3-29207a99e735 succeeded 2026-07-02T14:… 2026-07-02…               200 NA    /jobs/e51…
+```
+
+When the job status indicates successful completion, the resulting report can be obtained using the `getAsyncReportResult()` function, as demonstrated below. The `format` parameter must reflect the original report format; it can be either 'excel' or 'csv'.
+
+```{r getAsyncReportResult, eval=FALSE}
+jobResult <- getAsyncReportResult(jobToken = jobToken, format = "csv")
+```

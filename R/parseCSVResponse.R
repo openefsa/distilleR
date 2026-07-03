@@ -5,11 +5,11 @@
 #' @param response `httr2_response`. An HTTP response object returned by
 #'   `httr2::req_perform()`.
 #' 
-#' @param errorMessage `character` (string). The message to display in case of
-#'   errors.
+#' @param errorMessage `character` (string, optional). The message to display in
+#'   case of errors.
 #' 
-#' @param verbose `logical`. A flag to specify whether to make the parsing
-#'   verbose or not.
+#' @param verbose `logical` (optional). A flag to specify whether to make the
+#'   parsing verbose or not.
 #' 
 #'   By default: TRUE.
 #' 
