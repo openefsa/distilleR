@@ -25,12 +25,13 @@ test_that("The timeout must be an integer", {
 test_that("Expect an error if a bad job token is specified", {
   with_mocked_bindings(
     .performRequest = function(request, errorMessage) {
-      invalidUrl_ <- "https://invalid_instance/jobs/BAD_JOB_TOKEN"
+      invalidUrl_ <- "https://example.org/jobs/BAD_JOB_TOKEN"
       if (request$url == invalidUrl_) { stop() }
     }, {
       expect_error(
         getAsyncReportStatus(
-          jobToken = "BAD_JOB_TOKEN"))
+          jobToken = "BAD_JOB_TOKEN",
+          distillerAsyncInstanceUrl = "https://example.org"))
     }
   )
 })
@@ -85,7 +86,8 @@ test_that("A tibble must be returned", {
       return(response_)
     }, {
       jobStatus_ <- getAsyncReportStatus(
-        jobToken = "JOB_TOKEN")
+        jobToken = "JOB_TOKEN",
+        distillerAsyncInstanceUrl = "https://example.org")
       
       expect_s3_class(jobStatus_, "data.frame")
     }

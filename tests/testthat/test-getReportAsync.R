@@ -74,6 +74,7 @@ test_that("Expect an error if a bad async instance URL is specified", {
         getReportAsync(
           projectId = 123,
           reportId = 456,
+          distillerInstanceUrl = "https://example.org",
           distillerAsyncInstanceUrl = "https://invalid_instance",
           distillerToken = "DISTILLER_TOKEN"))
     }
@@ -114,6 +115,8 @@ test_that("A tibble must be returned", {
       job_ <- getReportAsync(
         projectId = 123,
         reportId = 456,
+        distillerInstanceUrl = "https://example.org",
+        distillerAsyncInstanceUrl = "https://example.org",
         distillerToken = "DISTILLER_TOKEN")
       
       expect_s3_class(job_, "data.frame")
