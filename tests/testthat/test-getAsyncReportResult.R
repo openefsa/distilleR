@@ -46,13 +46,14 @@ test_that("The timeout must be an integer", {
 test_that("Expect an error if a bad job token is specified", {
   with_mocked_bindings(
     .performRequest = function(request, errorMessage) {
-      invalidUrl_ <- "https://invalid_instance/jobs/BAD_JOB_TOKEN"
+      invalidUrl_ <- "https://example.org/jobs/BAD_JOB_TOKEN"
       if (request$url == invalidUrl_) { stop() }
     }, {
       expect_error(
         getAsyncReportResult(
           jobToken = "BAD_JOB_TOKEN",
-          format = "csv"))
+          format = "csv",
+          distillerAsyncInstanceUrl = "https://example.org"))
     }
   )
 })
@@ -122,7 +123,8 @@ test_that("A tibble must be returned (XLSX)", {
     }, {
       report_ <- getAsyncReportResult(
         jobToken = "JOB_TOKEN",
-        format = "excel")
+        format = "excel",
+        distillerAsyncInstanceUrl = "https://example.org")
       
       expect_s3_class(report_, "data.frame")
     }
@@ -159,7 +161,8 @@ test_that("A tibble must be returned (CSV)", {
     }, {
       report_ <- getAsyncReportResult(
         jobToken = "JOB_TOKEN",
-        format = "csv")
+        format = "csv",
+        distillerAsyncInstanceUrl = "https://example.org")
       
       expect_s3_class(report_, "data.frame")
     }
