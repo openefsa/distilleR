@@ -7,8 +7,8 @@
 #' @param request `httr2_request`. A request object created with the `httr2`
 #'   package and configured with methods, headers and parameters.
 #' 
-#' @param errorMessage `character` (string). The message to display in case of
-#'   errors.
+#' @param errorMessage `character` (string, optional). The message to display in
+#'   case of errors.
 #' 
 #' @return The HTTP response object returned by `httr2::req_perform()` if the
 #'   request is successful.

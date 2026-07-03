@@ -8,15 +8,16 @@
 #'
 #' @param projectId `integer`. The ID of the project as provided by DistillerSR.
 #' 
-#' @param distillerInstanceUrl `character` (string). The distiller instance URL.
+#' @param distillerInstanceUrl `character` (string, optional). The distiller
+#'   instance URL.
 #' 
 #'   By default: Sys.getenv("DISTILLER_INSTANCE_URL").
 #' 
 #' @param distillerToken `character` (string). The token the user gets once
 #'   authenticated.
 #' 
-#' @param timeout `integer`. The maximum number of seconds to wait for the
-#'   response.
+#' @param timeout `integer` (optional). The maximum number of seconds to wait
+#'   for the response.
 #' 
 #'   By default: 1800 seconds (30 minutes).
 #' 
@@ -30,6 +31,7 @@
 #' 
 #' @importFrom checkmate assert_int assert_string
 #' @importFrom glue glue
+#' @importFrom tibble as_tibble
 #'
 #' @seealso \code{\link{getAuthenticationToken}}
 #' @seealso \code{\link{getProjects}}

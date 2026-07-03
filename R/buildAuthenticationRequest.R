@@ -9,8 +9,8 @@
 #' @param distillerKey `character` (string). The personal access key generated
 #'   in DistillerSR.
 #'
-#' @param timeout `integer`. The maximum number of seconds to wait for the
-#'   authentication response.
+#' @param timeout `integer` (optional). The maximum number of seconds to wait
+#'   for the authentication response.
 #' 
 #'   By default: 1800 seconds (30 minutes).
 #' 

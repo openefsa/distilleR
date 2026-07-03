@@ -12,28 +12,29 @@
 #' @param format `character` (string). The desired format for the document. It
 #'   can be either excel or csv.
 #' 
-#' @param distillerInstanceUrl `character` (string). The distiller instance URL.
+#' @param distillerInstanceUrl `character` (string, optional). The distiller
+#'   instance URL.
 #' 
 #'   By default: Sys.getenv("DISTILLER_INSTANCE_URL").
 #' 
 #' @param distillerToken `character` (string). The token the user gets once
 #'   authenticated.
 #' 
-#' @param timeout `integer`. The maximum number of seconds to wait for the
-#'   response.
+#' @param timeout `integer` (optional). The maximum number of seconds to wait
+#'   for the response.
 #' 
 #'   By default: 1800 seconds (30 minutes).
 #' 
-#' @param attempts `integer`. The maximum number of attempts.
+#' @param attempts `integer` (optional). The maximum number of attempts.
 #' 
 #'   By default: 1 attempt.
 #' 
-#' @param retryEach `integer`. The delay between attempts.
+#' @param retryEach `integer` (optional). The delay between attempts.
 #' 
 #'   By default: 600 seconds (10 minutes).
 #' 
-#' @param verbose `logical`. A flag to specify whether to make the function
-#'   verbose or not.
+#' @param verbose `logical` (optional). A flag to specify whether to make the
+#'   function verbose or not.
 #'   
 #'   By default: TRUE.
 #' 
@@ -83,6 +84,7 @@ getReport <- function(
   assert_choice(format, eval(formals()$format))
   assert_string(distillerInstanceUrl, pattern = "[^/]$")
   assert_string(distillerToken)
+  assert_int(timeout)
   assert_int(attempts, lower = 1)
   assert_int(retryEach, lower = 0)
   assert_logical(verbose)
@@ -96,7 +98,7 @@ getReport <- function(
     body = list(
       "project_id" = projectId,
       "saved_report_id" = reportId,
-      "use_saved_format"= TRUE))
+      "use_saved_format"= "true"))
 
   attempt_ <- 0
 

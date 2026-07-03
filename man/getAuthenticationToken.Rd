@@ -11,18 +11,18 @@ getAuthenticationToken(
 )
 }
 \arguments{
-\item{distillerInstanceUrl}{\code{character} (string). The base URL of the
-DistillerSR instance.
+\item{distillerInstanceUrl}{\code{character} (string, optional). The base URL of
+the DistillerSR instance.
 
 By default: Sys.getenv("DISTILLER_INSTANCE_URL").}
 
-\item{distillerKey}{\code{character} (string). The personal access key generated
-in DistillerSR.
+\item{distillerKey}{\code{character} (string, optional). The personal access key
+generated in DistillerSR.
 
 By default: Sys.getenv("DISTILLER_API_KEY").}
 
-\item{timeout}{\code{integer}. The maximum number of seconds to wait for the
-authentication response.
+\item{timeout}{\code{integer} (optional). The maximum number of seconds to wait
+for the authentication response.
 
 By default: 1800 seconds (30 minutes).}
 }

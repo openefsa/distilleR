@@ -7,18 +7,18 @@
 #' By default, the personal access key and the instance URL are read from the
 #' environment variables `DISTILLER_API_KEY` and `DISTILLER_INSTANCE_URL`.
 #' 
-#' @param distillerKey `character` (string). The personal access key generated
-#'   in DistillerSR.
+#' @param distillerKey `character` (string, optional). The personal access key
+#'   generated in DistillerSR.
 #' 
 #'   By default: Sys.getenv("DISTILLER_API_KEY").
 #' 
-#' @param distillerInstanceUrl `character` (string). The base URL of the
-#'   DistillerSR instance.
+#' @param distillerInstanceUrl `character` (string, optional). The base URL of
+#'   the DistillerSR instance.
 #'
 #'   By default: Sys.getenv("DISTILLER_INSTANCE_URL").
 #'   
-#' @param timeout `integer`. The maximum number of seconds to wait for the
-#'   authentication response.
+#' @param timeout `integer` (optional). The maximum number of seconds to wait
+#'   for the authentication response.
 #' 
 #'   By default: 1800 seconds (30 minutes).
 #'
