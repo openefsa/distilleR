@@ -11,15 +11,16 @@ getProjects(
 )
 }
 \arguments{
-\item{distillerInstanceUrl}{\code{character} (string). The distiller instance URL.
+\item{distillerInstanceUrl}{\code{character} (string, optional). The distiller
+instance URL.
 
 By default: Sys.getenv("DISTILLER_INSTANCE_URL").}
 
 \item{distillerToken}{\code{character} (string). The token the user gets once
 authenticated.}
 
-\item{timeout}{\code{integer}. The maximum number of seconds to wait for the
-response.
+\item{timeout}{\code{integer} (optional). The maximum number of seconds to wait
+for the response.
 
 By default: 1800 seconds (30 minutes).}
 }
